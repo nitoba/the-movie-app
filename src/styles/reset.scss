@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth;
   font-size: calc(100vw / 1440 * 10);
   @include isMobile {
-    font-size: calc(100vw / 768 * 10);
+    font-size: calc(100vw / 500 * 10);
   }
 }
 
