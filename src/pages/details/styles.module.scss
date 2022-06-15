@@ -1,4 +1,5 @@
 @import "../../styles/typography-mixin.scss";
+@import "../../styles/responsive-mixin.scss";
 
 .container {
   display: flex;
@@ -77,11 +78,29 @@
   gap: 8rem;
   margin-top: 8rem;
   padding: 0 7.8rem;
+
+  @include isMobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
   .containerPorter {
     max-width: 50%;
     height: 72rem;
     position: sticky;
     top: 2.4rem;
+
+    @include isMobile {
+      height: 40rem;
+      width: 100%;
+      max-width: 100%;
+
+      position: initial;
+      top: initial;
+    }
+
     .posterImage {
       width: 100%;
       height: 100%;
@@ -94,6 +113,12 @@
     flex-direction: column;
     gap: 2.4rem;
     max-width: 50%;
+
+    @include isMobile {
+      width: 100%;
+      max-width: 100%;
+    }
+
     .infoTitle {
       @include headingFour;
       color: var(--gray50);
