@@ -3,6 +3,7 @@ import {
   Route,
   Routes as RouterProvider,
 } from "react-router-dom";
+import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import { DetailsPage } from "./pages/details";
 import { HomePage } from "./pages/home";
@@ -15,6 +16,7 @@ export function Routes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/detail/:typeContent/:id" element={<DetailsPage />} />
       </RouterProvider>
+      <Footer />
     </BrowserRouter>
   );
 }

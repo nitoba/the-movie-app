@@ -1,0 +1,72 @@
+@import "../../styles/responsive-mixin.scss";
+@import "../../styles/typography-mixin.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(24px);
+  border-radius: 2.4rem;
+  transform: translateY(-2.4rem);
+
+  @include isMobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem;
+
+    @include isMobile {
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        transform: scale(0.7);
+      }
+
+      h3 {
+        @include headingFive;
+        color: var(--gray200);
+      }
+    }
+
+    .copyright {
+      @include bodyRegular;
+      color: var(--gray300);
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.6rem;
+      border-radius: 99999px;
+      min-width: 15rem;
+      @include bodyRegular;
+      transition: all 0.2s ease-in-out;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+
+      @include isMobile {
+        width: 80%;
+      }
+    }
+  }
+}
