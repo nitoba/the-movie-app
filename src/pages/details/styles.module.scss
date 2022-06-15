@@ -61,6 +61,12 @@
     margin-top: calc(-4rem - 4rem);
     margin-left: 7.8rem;
 
+    @include isMobile {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
     span {
       @include bodyExtraSmall;
       color: var(--primary200);
