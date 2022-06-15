@@ -1,8 +1,12 @@
 @import "../../styles/typography-mixin.scss";
+@import "../../styles/responsive-mixin.scss";
 
 .container {
   padding-top: 8rem;
   padding-bottom: 3rem;
+
+  @include isMobile {
+  }
 }
 
 .titlePageContainer {
@@ -10,6 +14,11 @@
   flex-direction: column;
   gap: 1.6rem;
   max-width: 58.8rem;
+
+  @include isMobile {
+    max-width: 100%;
+  }
+
   .title {
     @include headingOne;
   }
@@ -37,6 +46,10 @@
   display: flex;
   flex-direction: column;
 
+  @include isMobile {
+    width: 100%;
+  }
+
   .category {
     display: flex;
     align-items: center;
@@ -57,6 +70,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2.4rem;
+
+    @include isMobile {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(216px, 1fr));
+      place-items: center;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
   }
 }
 

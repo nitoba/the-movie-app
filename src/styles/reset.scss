@@ -30,6 +30,11 @@ body {
   background-repeat: no-repeat;
   background-color: var(--primary900);
   -webkit-font-smoothing: antialiased;
+
+  @include isMobile {
+    width: 100%;
+    padding: 0 2.4rem;
+  }
 }
 
 button {
