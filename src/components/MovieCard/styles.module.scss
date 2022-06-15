@@ -13,7 +13,7 @@
   cursor: pointer;
   transition: all 0.2s;
 
-  @include isMobile {
+  @include useBreakpoints {
     width: 95%;
     height: 60rem;
   }
@@ -31,7 +31,7 @@
       border-radius: 0.8rem;
       object-fit: cover;
 
-      @include isMobile {
+      @include useBreakpoints {
         height: 52rem;
       }
     }

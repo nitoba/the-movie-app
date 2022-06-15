@@ -9,7 +9,7 @@
 html {
   scroll-behavior: smooth;
   font-size: calc(100vw / 1440 * 10);
-  @include isMobile {
+  @include useBreakpoints {
     font-size: calc(100vw / 500 * 10);
   }
 }
@@ -31,7 +31,7 @@ body {
   background-color: var(--primary900);
   -webkit-font-smoothing: antialiased;
 
-  @include isMobile {
+  @include useBreakpoints {
     width: 100%;
     padding: 0 3.2rem;
   }

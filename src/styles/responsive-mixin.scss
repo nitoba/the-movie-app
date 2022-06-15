@@ -1,7 +1,9 @@
 $mobile: 768px;
+$tablet: 992px;
+$desktop: 1200px;
 
-@mixin isMobile() {
-  @media (max-width: $mobile) {
+@mixin useBreakpoints($breakpoint: $mobile) {
+  @media (max-width: $breakpoint) {
     @content;
   }
 }

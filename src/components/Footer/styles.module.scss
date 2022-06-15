@@ -11,7 +11,7 @@
   border-radius: 2.4rem;
   transform: translateY(-2.4rem);
 
-  @include isMobile {
+  @include useBreakpoints {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@
     justify-content: space-between;
     padding: 2.4rem;
 
-    @include isMobile {
+    @include useBreakpoints {
       flex-direction: column;
       gap: 2.4rem;
     }
@@ -64,7 +64,7 @@
         filter: brightness(1.2);
       }
 
-      @include isMobile {
+      @include useBreakpoints {
         width: 80%;
       }
     }
