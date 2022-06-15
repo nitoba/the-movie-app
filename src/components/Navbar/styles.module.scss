@@ -1,0 +1,36 @@
+@import "../../styles/typography-mixin.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  height: 8rem;
+  .logo {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.navLinks {
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+  }
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  a {
+    @include linkRegular();
+    transition: all 0.3s ease-in-out;
+    color: var(--gray200);
+
+    &:hover {
+      color: var(--primary300);
+    }
+  }
+}

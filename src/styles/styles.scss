@@ -1,0 +1,21 @@
+@use "./typography.scss";
+@import "./colors.scss";
+@import "./reset.scss";
+
+.containerNoDataOnAllScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.containerNoDataOnScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 4rem;
+}

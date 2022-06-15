@@ -1,0 +1,56 @@
+@import "./responsive-mixin.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(100vw / 1440 * 10);
+  @include isMobile {
+    font-size: calc(100vw / 768 * 10);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: var(--gray300);
+  max-width: 120rem;
+  margin: 0 auto;
+  background-image: url("./src/assets/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary900);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  border: 0;
+  background: none;
+  outline: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}

@@ -1,0 +1,84 @@
+@import "../../styles/typography-mixin.scss";
+
+.container {
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+}
+
+.titlePageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 58.8rem;
+  .title {
+    @include headingOne;
+  }
+
+  .description {
+    @include bodyRegular;
+
+    span {
+      color: var(--primary300);
+    }
+  }
+
+  .inputText {
+    margin-top: 2.4rem;
+    width: 60%;
+  }
+}
+
+.tabFilters {
+  display: flex;
+  margin-top: 8rem;
+}
+
+.filmsContainer {
+  display: flex;
+  flex-direction: column;
+
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 2.4rem 0;
+    color: var(--gray400);
+
+    strong {
+      @include headingThree;
+    }
+
+    span {
+      @include bodyRegular;
+    }
+  }
+
+  .moviesGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+  }
+}
+
+.showMore {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.4rem;
+  padding: 1.6rem 0;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+
+    @include bodyLarge;
+    color: var(--gray100);
+
+    &:hover {
+      filter: brightness(1.3);
+    }
+  }
+}

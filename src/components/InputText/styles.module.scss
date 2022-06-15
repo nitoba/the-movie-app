@@ -1,0 +1,36 @@
+@import "../../styles/typography-mixin.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+  gap: 1.6rem;
+  height: 6.4rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray700);
+  border-radius: 1.2rem;
+  transition: all 0.2s;
+
+  > img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  input {
+    outline: none;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--gray200);
+    @include caption;
+
+    &::placeholder {
+      color: var(--gray600);
+    }
+  }
+
+  &.hasFocus {
+    outline: 1px solid var(--primary300);
+  }
+}
