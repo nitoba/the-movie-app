@@ -195,12 +195,7 @@ export function HomePage() {
       </section>
 
       <div className={styles.tabFilters}>
-        <TabBarFilter
-          filters={filters}
-          onChangeFilter={(value) => {
-            setCurrentFilter(value);
-          }}
-        />
+        <TabBarFilter />
       </div>
 
       <section className={styles.filmsContainer}>

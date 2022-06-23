@@ -1,27 +1,15 @@
-import { useState, HTMLAttributes } from "react";
-import { useFiltersContext } from "../../contexts/content-context";
+import { HTMLAttributes } from "react";
+import { Filter, useFiltersContext } from "../../contexts/content-context";
 
 import styles from "./styles.module.scss";
 
-type Filter = {
-  title: string;
-};
+interface TabBarFilterProps extends HTMLAttributes<HTMLDivElement> {}
 
-interface TabBarFilterProps extends HTMLAttributes<HTMLDivElement> {
-  filters: Filter[];
-  onChangeFilter: (value: Filter) => void;
-}
-
-export function TabBarFilter({
-  onChangeFilter,
-  filters,
-  ...props
-}: TabBarFilterProps) {
-  const { currentFilter, setCurrentFilter } = useFiltersContext();
+export function TabBarFilter({ ...props }: TabBarFilterProps) {
+  const { filters, currentFilter, setCurrentFilter } = useFiltersContext();
 
   function handleChangeFilter(filter: Filter) {
     setCurrentFilter(filter);
-    onChangeFilter(filter);
   }
 
   return (
