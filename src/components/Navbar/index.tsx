@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useFiltersContext } from "../../contexts/content-context";
+import { useFiltersContext } from "../../contexts/filters-context";
 
 import logo from "../../assets/logo.svg";
 import arrowRight from "../../assets/icons/arrow-right.svg";

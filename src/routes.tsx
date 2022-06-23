@@ -6,7 +6,7 @@ import {
 import { ToastContainer } from "react-toastify";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
-import { FiltersProvider } from "./contexts/content-context";
+import { FiltersProvider } from "./contexts/filters-context";
 import { DetailsPage } from "./pages/details";
 import { HomePage } from "./pages/home";
 

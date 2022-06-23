@@ -1,4 +1,4 @@
-import { useFiltersContext } from "../../contexts/content-context";
+import { useFiltersContext } from "../../contexts/filters-context";
 
 import styles from "./styles.module.scss";
 
