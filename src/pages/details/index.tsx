@@ -110,7 +110,14 @@ export function DetailsPage() {
               <div className={styles.statusInfoContainer}>
                 <div className={styles.statusInfoContentContainer}>
                   <span>Genres</span>
-                  <strong>{content.genres.map((g) => g.name + " ")} </strong>
+                  <strong>
+                    {content.genres.map(
+                      (g, i) =>
+                        `${g.name} ${
+                          i !== content.genres.length - 1 ? " | " : ""
+                        }`
+                    )}
+                  </strong>
                 </div>
               </div>
             </div>
@@ -155,7 +162,14 @@ export function DetailsPage() {
               <div className={styles.statusInfoContainer}>
                 <div className={styles.statusInfoContentContainer}>
                   <span>Genres</span>
-                  <strong>{content.genres.map((g) => g.name + " ")}</strong>
+                  <strong>
+                    {content.genres.map(
+                      (g, i) =>
+                        `${g.name} ${
+                          i !== content.genres.length - 1 ? " | " : ""
+                        }`
+                    )}
+                  </strong>
                 </div>
               </div>
             </div>
