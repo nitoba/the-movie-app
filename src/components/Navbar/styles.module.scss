@@ -1,4 +1,5 @@
 @import "../../styles/typography-mixin.scss";
+@import "../../styles/responsive-mixin.scss";
 
 .header {
   position: fixed;
@@ -16,6 +17,10 @@
   .logo {
     width: 4rem;
     height: 4rem;
+  }
+
+  @include useBreakpoints {
+    padding: 2rem 3rem;
   }
 }
 

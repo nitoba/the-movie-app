@@ -51,7 +51,6 @@ body {
 
   @include useBreakpoints {
     width: 100%;
-    padding: 0 3.2rem;
   }
 }
 
@@ -81,4 +80,8 @@ li {
 .container {
   max-width: 120rem;
   margin: 0 auto;
+
+  @include useBreakpoints {
+    padding: 0 3.2rem;
+  }
 }
