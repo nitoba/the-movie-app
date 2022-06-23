@@ -44,7 +44,7 @@ export function DetailsPage() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} container`}>
       <section className={styles.contentBanner}>
         <div className={styles.backgroundBanner}>
           <img

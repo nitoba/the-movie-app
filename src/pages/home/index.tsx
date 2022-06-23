@@ -9,6 +9,8 @@ import { useContent } from "../../hooks/useContent";
 
 import styles from "./styles.module.scss";
 import { useNavigate } from "react-router-dom";
+import { isError } from "../../utils/isError";
+import { toast } from "react-toastify";
 
 type Filter = {
   title: string;
@@ -46,8 +48,11 @@ export function HomePage() {
     if (filter.title === "Movies") {
       const movies = await loadMovies();
 
-      if (movies instanceof Error) {
+      if (isError(movies)) {
         console.error(movies);
+        toast(movies.message, {
+          type: "error",
+        });
         return;
       }
 
@@ -57,8 +62,11 @@ export function HomePage() {
     if (filter.title === "Tv Shows") {
       const tvShows = await loadTvShows();
 
-      if (tvShows instanceof Error) {
+      if (isError(tvShows)) {
         console.error(tvShows);
+        toast(tvShows.message, {
+          type: "error",
+        });
         setIsLoading(false);
 
         return;
@@ -70,8 +78,11 @@ export function HomePage() {
     if (filter.title === "All") {
       const movies = await loadMovies();
 
-      if (movies instanceof Error) {
+      if (isError(movies)) {
         console.error(movies);
+        toast(movies.message, {
+          type: "error",
+        });
         setIsLoading(false);
 
         return;
@@ -79,8 +90,13 @@ export function HomePage() {
 
       const tvShows = await loadTvShows();
 
-      if (tvShows instanceof Error) {
+      if (isError(tvShows)) {
         console.error(tvShows);
+
+        toast(tvShows.message, {
+          type: "error",
+        });
+
         setIsLoading(false);
 
         return;
@@ -98,9 +114,12 @@ export function HomePage() {
     if (currentFilter.title === "Movies") {
       const movies = await loadMovies();
 
-      if (movies instanceof Error) {
+      if (isError(movies)) {
         console.error(movies);
         setIsLoadingMore(false);
+        toast(movies.message, {
+          type: "error",
+        });
 
         return;
       }
@@ -114,6 +133,9 @@ export function HomePage() {
       if (tvShows instanceof Error) {
         console.error(tvShows);
         setIsLoadingMore(false);
+        toast(tvShows.message, {
+          type: "error",
+        });
 
         return;
       }
@@ -124,18 +146,24 @@ export function HomePage() {
     if (currentFilter.title === "All") {
       const movies = await loadMovies();
 
-      if (movies instanceof Error) {
+      if (isError(movies)) {
         console.error(movies);
         setIsLoadingMore(false);
+        toast(movies.message, {
+          type: "error",
+        });
 
         return;
       }
 
       const tvShows = await loadTvShows();
 
-      if (tvShows instanceof Error) {
+      if (isError(tvShows)) {
         console.error(tvShows);
         setIsLoadingMore(false);
+        toast(tvShows.message, {
+          type: "error",
+        });
 
         return;
       }
@@ -159,7 +187,7 @@ export function HomePage() {
   }, [currentPage]);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} container`}>
       <section className={styles.titlePageContainer}>
         <h1 className={styles.title}>MaileHereko</h1>
         <p className={styles.description}>
