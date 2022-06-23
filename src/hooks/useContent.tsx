@@ -59,7 +59,7 @@ export function useContent() {
 
       return response.data;
     } catch (error) {
-      return new Error("Error loading movies");
+      return new Error(`Error loading movie with id: ${id}`);
     }
   }
 
@@ -70,7 +70,7 @@ export function useContent() {
       );
       return response.data.results;
     } catch (error) {
-      return new Error("Error loading movies");
+      return new Error("Error loading tv shows");
     }
   }
 
@@ -81,7 +81,7 @@ export function useContent() {
       );
       return response.data;
     } catch (error) {
-      return new Error("Error loading movies");
+      return new Error(`Error loading tv show with id: ${id}`);
     }
   }
 

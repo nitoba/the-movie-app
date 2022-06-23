@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useContent } from "../../hooks/useContent";
-import { Filter, useFiltersContext } from "../../contexts/content-context";
+import { Filter, useFiltersContext } from "../../contexts/filters-context";
 
 import { InputText } from "../../components/InputText";
 import { TabBarFilter } from "../../components/TabBarFilter";
