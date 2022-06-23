@@ -1,15 +1,12 @@
-import { HTMLAttributes } from "react";
 import { useFiltersContext } from "../../contexts/content-context";
 
 import styles from "./styles.module.scss";
 
-interface TabBarFilterProps extends HTMLAttributes<HTMLDivElement> {}
-
-export function TabBarFilter({ ...props }: TabBarFilterProps) {
+export function TabBarFilter() {
   const { filters, currentFilter, setCurrentFilter } = useFiltersContext();
 
   return (
-    <div className={styles.container} {...props}>
+    <div className={styles.container}>
       {filters.map((filter) => (
         <button
           key={filter.title}
