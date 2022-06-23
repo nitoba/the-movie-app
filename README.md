@@ -33,7 +33,9 @@ git clone https://github.com/NitoBa/the-movie-app.git
 cd the-movie-app
 ```
 
-Run this command to install the dependencies.
+Run this command to install the dependencies and add your credentials looks like on the `.env.example` file:
+
+VITE_REACT_APP_API_KEY=your-api-key
 
 ```bash
 npm install

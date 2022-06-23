@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ContentDetail, useContent } from "../../hooks/useContent";
+
+import { LoadingSpinner } from "../../components/LoadingSpinner";
 import starIcon from "../../assets/icons/star-icon.svg";
 
-import { useEffect, useState } from "react";
-
 import styles from "./styles.module.scss";
-import { LoadingSpinner } from "../../components/LoadingSpinner";
 
 export function DetailsPage() {
   const { id, typeContent } = useParams();

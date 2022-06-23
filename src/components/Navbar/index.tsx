@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
+import { useFiltersContext } from "../../contexts/content-context";
+
 import logo from "../../assets/logo.svg";
 import arrowRight from "../../assets/icons/arrow-right.svg";
-import { Link } from "react-router-dom";
 
 import styles from "./styles.module.scss";
-import { useFiltersContext } from "../../contexts/content-context";
 
 export function Navbar() {
   const { filters, setCurrentFilter } = useFiltersContext();

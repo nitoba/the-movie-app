@@ -1,17 +1,19 @@
-import { InputText } from "../../components/InputText";
-import searchIcon from "../../assets/icons/search-icon.svg";
-
-import { TabBarFilter } from "../../components/TabBarFilter";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useContent } from "../../hooks/useContent";
+import { Filter, useFiltersContext } from "../../contexts/content-context";
+
+import { InputText } from "../../components/InputText";
+import { TabBarFilter } from "../../components/TabBarFilter";
 import { MovieCard } from "../../components/MovieCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner";
-import { useContent } from "../../hooks/useContent";
+
+import searchIcon from "../../assets/icons/search-icon.svg";
+
+import { isError } from "../../utils/isError";
 
 import styles from "./styles.module.scss";
-import { useNavigate } from "react-router-dom";
-import { isError } from "../../utils/isError";
-import { toast } from "react-toastify";
-import { Filter, useFiltersContext } from "../../contexts/content-context";
 
 type ContentData = {
   id: number;

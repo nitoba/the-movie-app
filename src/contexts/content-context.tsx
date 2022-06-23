@@ -16,7 +16,7 @@ const FiltersContext = createContext<FiltersContextData>(
 );
 
 export const FiltersProvider = ({ children }: { children: ReactNode }) => {
-  const [filters, setFilters] = useState<Filter[]>([
+  const [filters] = useState<Filter[]>([
     { title: "All" },
     { title: "Movies" },
     { title: "Tv Shows" },
