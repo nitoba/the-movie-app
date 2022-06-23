@@ -11,10 +11,7 @@ import styles from "./styles.module.scss";
 import { useNavigate } from "react-router-dom";
 import { isError } from "../../utils/isError";
 import { toast } from "react-toastify";
-
-type Filter = {
-  title: string;
-};
+import { Filter, useFiltersContext } from "../../contexts/content-context";
 
 type ContentData = {
   id: number;
@@ -25,13 +22,7 @@ type ContentData = {
 };
 
 export function HomePage() {
-  const [filters, setFilters] = useState<Filter[]>([
-    { title: "All" },
-    { title: "Movies" },
-    { title: "Tv Shows" },
-  ]);
-
-  const [currentFilter, setCurrentFilter] = useState<Filter>(filters[0]);
+  const { filters, currentFilter, setCurrentFilter } = useFiltersContext();
   const [data, setData] = useState<ContentData[] | null>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);

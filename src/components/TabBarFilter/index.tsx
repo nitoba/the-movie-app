@@ -1,4 +1,5 @@
 import { useState, HTMLAttributes } from "react";
+import { useFiltersContext } from "../../contexts/content-context";
 
 import styles from "./styles.module.scss";
 
@@ -16,10 +17,10 @@ export function TabBarFilter({
   filters,
   ...props
 }: TabBarFilterProps) {
-  const [selectedFilter, setSelectedFilter] = useState<Filter>(filters[0]);
+  const { currentFilter, setCurrentFilter } = useFiltersContext();
 
   function handleChangeFilter(filter: Filter) {
-    setSelectedFilter(filter);
+    setCurrentFilter(filter);
     onChangeFilter(filter);
   }
 
@@ -29,7 +30,7 @@ export function TabBarFilter({
         <button
           key={filter.title}
           className={`${styles.tabOption} ${
-            selectedFilter === filter && styles.active
+            currentFilter === filter && styles.active
           }`}
           onClick={() => handleChangeFilter(filter)}
         >
