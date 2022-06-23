@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { Filter, useFiltersContext } from "../../contexts/content-context";
+import { useFiltersContext } from "../../contexts/content-context";
 
 import styles from "./styles.module.scss";
 
@@ -7,10 +7,6 @@ interface TabBarFilterProps extends HTMLAttributes<HTMLDivElement> {}
 
 export function TabBarFilter({ ...props }: TabBarFilterProps) {
   const { filters, currentFilter, setCurrentFilter } = useFiltersContext();
-
-  function handleChangeFilter(filter: Filter) {
-    setCurrentFilter(filter);
-  }
 
   return (
     <div className={styles.container} {...props}>
@@ -20,7 +16,7 @@ export function TabBarFilter({ ...props }: TabBarFilterProps) {
           className={`${styles.tabOption} ${
             currentFilter === filter && styles.active
           }`}
-          onClick={() => handleChangeFilter(filter)}
+          onClick={() => setCurrentFilter(filter)}
         >
           {filter.title}
         </button>
