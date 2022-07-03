@@ -77,17 +77,6 @@
       align-items: center;
       justify-content: center;
     }
-
-    // @include useBreakpoints {
-    //   width: 100%;
-    //   display: grid;
-    //   grid-template-columns: repeat(auto-fit, minmax(216px, 1fr));
-    //   place-items: center;
-    // }
-
-    // @media (max-width: 500px) {
-    //   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    // }
   }
 }
 

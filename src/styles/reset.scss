@@ -83,5 +83,6 @@ li {
 
   @include useBreakpoints {
     padding: 0 3.2rem;
+    padding-top: 10rem;
   }
 }
