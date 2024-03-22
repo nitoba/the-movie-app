@@ -42,7 +42,7 @@ export function useContent() {
   async function loadMovies(): Promise<ContentData[] | Error> {
     try {
       const response = await api.get<TheMoviesDBResponse<ContentData[]>>(
-        `/movie/popular/?api_key=${apiKey}&language=pt-BR&page=${currentPage}`
+        `/movie/popular?api_key=${apiKey}&language=pt-BR&page=${currentPage}`
       );
 
       return response.data.results;
@@ -66,7 +66,7 @@ export function useContent() {
   async function loadTvShows(): Promise<ContentData[] | Error> {
     try {
       const response = await api.get<TheMoviesDBResponse<ContentData[]>>(
-        `/tv/popular/?api_key=${apiKey}&language=pt-BR&page=${currentPage}`
+        `/tv/popular?api_key=${apiKey}&language=pt-BR&page=${currentPage}`
       );
       return response.data.results;
     } catch (error) {
